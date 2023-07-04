@@ -1,5 +1,5 @@
-int ledPin = 3; // led 3. pine bağlı
-int serialData=255;// serialData'ya başlangıç değeri olarak 255 atanıyor
+int ledPin = 3; // led connected to pin 3
+int serialData=255;// SerialData is initialized to 255
 
 void setup() {
   // put your setup code here, to run once:
@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-  if(Serial.available()>0)            //seri bağlantı noktasından okunmaya hazır depolanan baytları var ise.
-    serialData=Serial.read();        //seri porta gelen değerleri serialData'ya atıyoruz
-    analogWrite(ledPin,serialData);  //serialData'daki değeri analog olarak 3. pine yazar.
+  if(Serial.available()>0)            //if there are bytes stored ready to be read from the serial port.
+    serialData=Serial.read();        //assigning values ​​from serial port to serialData
+    analogWrite(ledPin,serialData);  //Writes the value in serialData as analog to the 3rd pin.
 }
